@@ -1,0 +1,355 @@
+$ terraform apply
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  + aws_instance.web
+      id:                                   <computed>
+      ami:                                  "ami-cfe4b2b0"
+      arn:                                  <computed>
+      associate_public_ip_address:          "true"
+      availability_zone:                    <computed>
+      cpu_core_count:                       <computed>
+      cpu_threads_per_core:                 <computed>
+      ebs_block_device.#:                   <computed>
+      ephemeral_block_device.#:             <computed>
+      get_password_data:                    "false"
+      instance_state:                       <computed>
+      instance_type:                        "t2.micro"
+      ipv6_address_count:                   <computed>
+      ipv6_addresses.#:                     <computed>
+      key_name:                             "deployer-key"
+      network_interface.#:                  <computed>
+      network_interface_id:                 <computed>
+      password_data:                        <computed>
+      placement_group:                      <computed>
+      primary_network_interface_id:         <computed>
+      private_dns:                          <computed>
+      private_ip:                           <computed>
+      public_dns:                           <computed>
+      public_ip:                            <computed>
+      root_block_device.#:                  <computed>
+      security_groups.#:                    "1"
+      security_groups.2200183879:           "allow_all"
+      source_dest_check:                    "true"
+      subnet_id:                            <computed>
+      tags.%:                               "1"
+      tags.Name:                            "EC2 Docker NGINX with Terraform Demo"
+      tenancy:                              <computed>
+      volume_tags.%:                        <computed>
+      vpc_security_group_ids.#:             <computed>
+
+  + aws_key_pair.deployer
+      id:                                   <computed>
+      fingerprint:                          <computed>
+      key_name:                             "deployer-key"
+      public_key:                           "***MANUALLY_REMOVED_BY_NICK***"
+
+  + aws_security_group.allow_all
+      id:                                   <computed>
+      arn:                                  <computed>
+      description:                          "Allow all inbound traffic"
+      egress.#:                             "1"
+      egress.482069346.cidr_blocks.#:       "1"
+      egress.482069346.cidr_blocks.0:       "0.0.0.0/0"
+      egress.482069346.description:         ""
+      egress.482069346.from_port:           "0"
+      egress.482069346.ipv6_cidr_blocks.#:  "0"
+      egress.482069346.prefix_list_ids.#:   "0"
+      egress.482069346.protocol:            "-1"
+      egress.482069346.security_groups.#:   "0"
+      egress.482069346.self:                "false"
+      egress.482069346.to_port:             "0"
+      ingress.#:                            "1"
+      ingress.482069346.cidr_blocks.#:      "1"
+      ingress.482069346.cidr_blocks.0:      "0.0.0.0/0"
+      ingress.482069346.description:        ""
+      ingress.482069346.from_port:          "0"
+      ingress.482069346.ipv6_cidr_blocks.#: "0"
+      ingress.482069346.protocol:           "-1"
+      ingress.482069346.security_groups.#:  "0"
+      ingress.482069346.self:               "false"
+      ingress.482069346.to_port:            "0"
+      name:                                 "allow_all"
+      owner_id:                             <computed>
+      revoke_rules_on_delete:               "false"
+      vpc_id:                               <computed>
+
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+aws_key_pair.deployer: Creating...
+  fingerprint: "" => "<computed>"
+  key_name:    "" => "deployer-key"
+  public_key:  "" => "***MANUALLY_REMOVED_BY_NICK***"
+aws_security_group.allow_all: Creating...
+  arn:                                  "" => "<computed>"
+  description:                          "" => "Allow all inbound traffic"
+  egress.#:                             "" => "1"
+  egress.482069346.cidr_blocks.#:       "" => "1"
+  egress.482069346.cidr_blocks.0:       "" => "0.0.0.0/0"
+  egress.482069346.description:         "" => ""
+  egress.482069346.from_port:           "" => "0"
+  egress.482069346.ipv6_cidr_blocks.#:  "" => "0"
+  egress.482069346.prefix_list_ids.#:   "" => "0"
+  egress.482069346.protocol:            "" => "-1"
+  egress.482069346.security_groups.#:   "" => "0"
+  egress.482069346.self:                "" => "false"
+  egress.482069346.to_port:             "" => "0"
+  ingress.#:                            "" => "1"
+  ingress.482069346.cidr_blocks.#:      "" => "1"
+  ingress.482069346.cidr_blocks.0:      "" => "0.0.0.0/0"
+  ingress.482069346.description:        "" => ""
+  ingress.482069346.from_port:          "" => "0"
+  ingress.482069346.ipv6_cidr_blocks.#: "" => "0"
+  ingress.482069346.protocol:           "" => "-1"
+  ingress.482069346.security_groups.#:  "" => "0"
+  ingress.482069346.self:               "" => "false"
+  ingress.482069346.to_port:            "" => "0"
+  name:                                 "" => "allow_all"
+  owner_id:                             "" => "<computed>"
+  revoke_rules_on_delete:               "" => "false"
+  vpc_id:                               "" => "<computed>"
+aws_key_pair.deployer: Creation complete after 0s (ID: deployer-key)
+aws_security_group.allow_all: Creation complete after 3s (ID: sg-013db3c6405451abc)
+aws_instance.web: Creating...
+  ami:                          "" => "ami-cfe4b2b0"
+  arn:                          "" => "<computed>"
+  associate_public_ip_address:  "" => "true"
+  availability_zone:            "" => "<computed>"
+  cpu_core_count:               "" => "<computed>"
+  cpu_threads_per_core:         "" => "<computed>"
+  ebs_block_device.#:           "" => "<computed>"
+  ephemeral_block_device.#:     "" => "<computed>"
+  get_password_data:            "" => "false"
+  instance_state:               "" => "<computed>"
+  instance_type:                "" => "t2.micro"
+  ipv6_address_count:           "" => "<computed>"
+  ipv6_addresses.#:             "" => "<computed>"
+  key_name:                     "" => "deployer-key"
+  network_interface.#:          "" => "<computed>"
+  network_interface_id:         "" => "<computed>"
+  password_data:                "" => "<computed>"
+  placement_group:              "" => "<computed>"
+  primary_network_interface_id: "" => "<computed>"
+  private_dns:                  "" => "<computed>"
+  private_ip:                   "" => "<computed>"
+  public_dns:                   "" => "<computed>"
+  public_ip:                    "" => "<computed>"
+  root_block_device.#:          "" => "<computed>"
+  security_groups.#:            "" => "1"
+  security_groups.2200183879:   "" => "allow_all"
+  source_dest_check:            "" => "true"
+  subnet_id:                    "" => "<computed>"
+  tags.%:                       "" => "1"
+  tags.Name:                    "" => "EC2 Docker NGINX with Terraform Demo"
+  tenancy:                      "" => "<computed>"
+  volume_tags.%:                "" => "<computed>"
+  vpc_security_group_ids.#:     "" => "<computed>"
+aws_instance.web: Still creating... (10s elapsed)
+aws_instance.web: Still creating... (20s elapsed)
+aws_instance.web: Provisioning with 'remote-exec'...
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web: Still creating... (30s elapsed)
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web: Still creating... (40s elapsed)
+aws_instance.web: Still creating... (50s elapsed)
+aws_instance.web (remote-exec): Connecting to remote host via SSH...
+aws_instance.web (remote-exec):   Host: 107.20.96.5
+aws_instance.web (remote-exec):   User: ec2-user
+aws_instance.web (remote-exec):   Password: false
+aws_instance.web (remote-exec):   Private key: false
+aws_instance.web (remote-exec):   SSH Agent: true
+aws_instance.web (remote-exec):   Checking Host Key: false
+aws_instance.web (remote-exec): Connected!
+aws_instance.web (remote-exec): Loaded plugins: priorities, update-motd,
+aws_instance.web (remote-exec):               : upgrade-helper
+aws_instance.web (remote-exec): Resolving Dependencies
+aws_instance.web (remote-exec): --> Running transaction check
+aws_instance.web (remote-exec): ---> Package docker.x86_64 0:18.03.1ce-5.0.amzn1 will be installed
+aws_instance.web (remote-exec): --> Processing Dependency: xfsprogs for package: docker-18.03.1ce-5.0.amzn1.x86_64
+aws_instance.web (remote-exec): --> Processing Dependency: libseccomp.so.2()(64bit) for package: docker-18.03.1ce-5.0.amzn1.x86_64
+aws_instance.web (remote-exec): --> Processing Dependency: libltdl.so.7()(64bit) for package: docker-18.03.1ce-5.0.amzn1.x86_64
+aws_instance.web (remote-exec): --> Running transaction check
+aws_instance.web (remote-exec): ---> Package libseccomp.x86_64 0:2.3.1-2.4.amzn1 will be installed
+aws_instance.web (remote-exec): ---> Package libtool-ltdl.x86_64 0:2.4.2-20.4.8.5.32.amzn1 will be installed
+aws_instance.web (remote-exec): ---> Package xfsprogs.x86_64 0:4.5.0-9.21.amzn1 will be installed
+aws_instance.web (remote-exec): --> Finished Dependency Resolution
+
+aws_instance.web (remote-exec): Dependencies Resolved
+
+aws_instance.web (remote-exec): ========================================
+aws_instance.web (remote-exec):  Package    Arch   Version
+aws_instance.web (remote-exec):                      Repository    Size
+aws_instance.web (remote-exec): ========================================
+aws_instance.web (remote-exec): Installing:
+aws_instance.web (remote-exec):  docker     x86_64 18.03.1ce-5.0.amzn1
+aws_instance.web (remote-exec):                      amzn-updates  40 M
+aws_instance.web (remote-exec): Installing for dependencies:
+aws_instance.web (remote-exec):  libseccomp x86_64 2.3.1-2.4.amzn1
+aws_instance.web (remote-exec):                      amzn-main     79 k
+aws_instance.web (remote-exec):  libtool-ltdl
+aws_instance.web (remote-exec):             x86_64 2.4.2-20.4.8.5.32.amzn1
+aws_instance.web (remote-exec):                      amzn-main     51 k
+aws_instance.web (remote-exec):  xfsprogs   x86_64 4.5.0-9.21.amzn1
+aws_instance.web (remote-exec):                      amzn-main    1.7 M
+
+aws_instance.web (remote-exec): Transaction Summary
+aws_instance.web (remote-exec): ========================================
+aws_instance.web (remote-exec): Install  1 Package (+3 Dependent packages)
+
+aws_instance.web (remote-exec): Total download size: 42 M
+aws_instance.web (remote-exec): Installed size: 141 M
+aws_instance.web (remote-exec): Downloading packages:
+aws_instance.web (remote-exec): (1/4): libtool-ltd |  51 kB   00:00
+aws_instance.web (remote-exec): (3/4): libsecco 0% |  51 kB   --:-- ETA
+aws_instance.web (remote-exec): (2/4): libseccomp- |  79 kB   00:00
+aws_instance.web (remote-exec): (4/4): xfsprogs 0% | 366 kB   01:30 ETA
+aws_instance.web (remote-exec): (3/4): xfsprogs-4. | 1.7 MB   00:00
+aws_instance.web (remote-exec): (4/4): docker-1 5% | 2.2 MB   00:50 ETA
+aws_instance.web (remote-exec): (4/4): docker-1 6% | 2.5 MB   00:49 ETA
+aws_instance.web (remote-exec): (4/4): docker-1 6% | 2.9 MB   00:48 ETA
+aws_instance.web (remote-exec): (4/4): docker-1 8% | 3.4 MB   00:45 ETA
+aws_instance.web (remote-exec): (4/4): docker-1 9% | 3.9 MB   00:42 ETA
+aws_instance.web (remote-exec): (4/4): docker- 11% | 4.6 MB   00:38 ETA
+aws_instance.web (remote-exec): (4/4): docker- 12% | 5.3 MB   00:35 ETA
+aws_instance.web: Still creating... (1m0s elapsed)
+aws_instance.web (remote-exec): (4/4): docker- 14% | 6.0 MB   00:32 ETA
+aws_instance.web (remote-exec): (4/4): docker- 16% | 6.8 MB   00:29 ETA
+aws_instance.web (remote-exec): (4/4): docker- 18% | 7.6 MB   00:27 ETA
+aws_instance.web (remote-exec): (4/4): docker- 19% | 8.3 MB   00:25 ETA
+aws_instance.web (remote-exec): (4/4): docker- 21% | 9.1 MB   00:23 ETA
+aws_instance.web (remote-exec): (4/4): docker- 23% |  10 MB   00:21 ETA
+aws_instance.web (remote-exec): (4/4): docker- 25% |  11 MB   00:19 ETA
+aws_instance.web (remote-exec): (4/4): docker- 28% |  12 MB   00:18 ETA
+aws_instance.web (remote-exec): (4/4): docker- 30% |  13 MB   00:16 ETA
+aws_instance.web (remote-exec): (4/4): docker- 33% |  14 MB   00:14 ETA
+aws_instance.web (remote-exec): (4/4): docker- 36% |  15 MB   00:13 ETA
+aws_instance.web (remote-exec): (4/4): docker- 39% |  16 MB   00:11 ETA
+aws_instance.web (remote-exec): (4/4): docker- 42% |  18 MB   00:10 ETA
+aws_instance.web (remote-exec): (4/4): docker- 46% |  19 MB   00:09 ETA
+aws_instance.web (remote-exec): (4/4): docker- 49% |  21 MB   00:08 ETA
+aws_instance.web (remote-exec): (4/4): docker- 53% |  22 MB   00:07 ETA
+aws_instance.web (remote-exec): (4/4): docker- 56% |  24 MB   00:06 ETA
+aws_instance.web (remote-exec): (4/4): docker- 60% |  25 MB   00:05 ETA
+aws_instance.web (remote-exec): (4/4): docker- 64% |  27 MB   00:04 ETA
+aws_instance.web (remote-exec): (4/4): docker- 68% |  29 MB   00:04 ETA
+aws_instance.web (remote-exec): (4/4): docker- 72% |  30 MB   00:03 ETA
+aws_instance.web (remote-exec): (4/4): docker- 77% |  32 MB   00:02 ETA
+aws_instance.web (remote-exec): (4/4): docker- 81% |  34 MB   00:02 ETA
+aws_instance.web (remote-exec): (4/4): docker- 85% |  36 MB   00:01 ETA
+aws_instance.web (remote-exec): (4/4): docker- 90% |  38 MB   00:01 ETA
+aws_instance.web (remote-exec): (4/4): docker- 95% |  40 MB   00:00 ETA
+aws_instance.web (remote-exec): (4/4): docker-18.0 |  40 MB   00:12
+aws_instance.web (remote-exec): ----------------------------------------
+aws_instance.web (remote-exec): Total      3.4 MB/s |  42 MB  00:12
+aws_instance.web (remote-exec): Running transaction check
+aws_instance.web (remote-exec): Running transaction test
+aws_instance.web (remote-exec): Transaction test succeeded
+aws_instance.web (remote-exec): Running transaction
+aws_instance.web (remote-exec):   Installing : libsecco [         ] 1/4
+aws_instance.web (remote-exec):   Installing : libsecco [#        ] 1/4
+aws_instance.web (remote-exec):   Installing : libsecco [###      ] 1/4
+aws_instance.web (remote-exec):   Installing : libsecco [#####    ] 1/4
+aws_instance.web (remote-exec):   Installing : libsecco [#######  ] 1/4
+aws_instance.web (remote-exec):   Installing : libsecco [######## ] 1/4
+aws_instance.web (remote-exec):   Installing : libseccomp-2.3.1-2   1/4
+aws_instance.web (remote-exec):   Installing : libtool- [         ] 2/4
+aws_instance.web (remote-exec):   Installing : libtool- [#####    ] 2/4
+aws_instance.web (remote-exec):   Installing : libtool- [######## ] 2/4
+aws_instance.web (remote-exec):   Installing : libtool-ltdl-2.4.2   2/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [         ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [#        ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [##       ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [###      ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [####     ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [#####    ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [######   ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [#######  ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs [######## ] 3/4
+aws_instance.web (remote-exec):   Installing : xfsprogs-4.5.0-9.2   3/4
+aws_instance.web (remote-exec):   Installing : docker-1 [         ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [#        ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [##       ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [###      ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [####     ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [#####    ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [######   ] 4/4
+aws_instance.web: Still creating... (1m10s elapsed)
+aws_instance.web (remote-exec):   Installing : docker-1 [#######  ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-1 [######## ] 4/4
+aws_instance.web (remote-exec):   Installing : docker-18.03.1ce-5   4/4
+aws_instance.web (remote-exec):   Verifying  : xfsprogs-4.5.0-9.2   1/4
+aws_instance.web (remote-exec):   Verifying  : libtool-ltdl-2.4.2   2/4
+aws_instance.web (remote-exec):   Verifying  : docker-18.03.1ce-5   3/4
+aws_instance.web (remote-exec):   Verifying  : libseccomp-2.3.1-2   4/4
+
+aws_instance.web (remote-exec): Installed:
+aws_instance.web (remote-exec):   docker.x86_64 0:18.03.1ce-5.0.amzn1
+
+aws_instance.web (remote-exec): Dependency Installed:
+aws_instance.web (remote-exec):   libseccomp.x86_64 0:2.3.1-2.4.amzn1
+aws_instance.web (remote-exec):   libtool-ltdl.x86_64 0:2.4.2-20.4.8.5.32.amzn1
+aws_instance.web (remote-exec):   xfsprogs.x86_64 0:4.5.0-9.21.amzn1
+
+aws_instance.web (remote-exec): Complete!
+aws_instance.web (remote-exec): Starting cgconfig service: [  OK  ]
+aws_instance.web (remote-exec): Starting docker:
+aws_instance.web (remote-exec): .                          [  OK  ]
+aws_instance.web (remote-exec): Using default tag: latest
+aws_instance.web (remote-exec): latest: Pulling from library/nginx
+aws_instance.web (remote-exec): be8881be8156: Pulling fs layer
+aws_instance.web (remote-exec): 32d9726baeef: Pulling fs layer
+aws_instance.web (remote-exec): 87e5e6f71297: Pull complete
+aws_instance.web (remote-exec): Digest: sha256:d85914d547a6c92faa39ce7058bd7529baacab7e0cd4255442b04577c4d1f424
+aws_instance.web (remote-exec): Status: Downloaded newer image for nginx:latest
+aws_instance.web (remote-exec): d005bfaa2ec6331604fe9bfbe35c7b7c01c9289be37272c35a5152520e3814ad
+aws_instance.web: Creation complete after 1m17s (ID: i-04ed51af15d3d4907)
+
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+web_ip = 107.20.96.5
